@@ -1,10 +1,9 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <Document>
           <!--Created with XmlGrid Free Online XML Editor (http://xmlgrid.net)-->
        
        <DailyCigarette>
-              <Year>2001</Year>
+              <Year2>2001</Year2>
               <Age1>4.5</Age1>
               <Age2>20.8</Age2>
               <Age3>19.3</Age3>
@@ -13,7 +12,7 @@
           </DailyCigarette>
        <DailyCigarette>
               
-              <Year>2002</Year>
+              <Year2>2002</Year2>
               <Age1>4.1</Age1>
               <Age2>21.2</Age2>
               <Age3>19.1</Age3>
@@ -22,7 +21,7 @@
           </DailyCigarette>
        <DailyCigarette>
               
-              <Year>2003</Year>
+              <Year2>2003</Year2>
               <Age1>3.6</Age1>
               <Age2>21.3</Age2>
               <Age3>20</Age3>
@@ -31,7 +30,7 @@
           </DailyCigarette>
        <DailyCigarette>
               
-              <Year>2004</Year>
+              <Year2>2004</Year2>
               <Age1>3.2</Age1>
               <Age2>20.8</Age2>
               <Age3>18.8</Age3>
@@ -40,7 +39,7 @@
           </DailyCigarette>
        <DailyCigarette>
               
-              <Year>2005</Year>
+              <Year2>2005</Year2>
               <Age1>2.9</Age1>
               <Age2>19.7</Age2>
               <Age3>20.5</Age3>
@@ -49,7 +48,7 @@
           </DailyCigarette>
        <DailyCigarette>
               
-              <Year>2006</Year>
+              <Year2>2006</Year2>
               <Age1>2.9</Age1>
               <Age2>18.9</Age2>
               <Age3>20.3</Age3>
@@ -58,7 +57,7 @@
           </DailyCigarette>
        <DailyCigarette>
               
-              <Year>2007</Year>
+              <Year2>2007</Year2>
               <Age1>2.7</Age1>
               <Age2>17.9</Age2>
               <Age3>18.5</Age3>
@@ -67,7 +66,7 @@
           </DailyCigarette>
        <DailyCigarette>
               
-              <Year>2008</Year>
+              <Year2>2008</Year2>
               <Age1>2</Age1>
               <Age2>17</Age2>
               <Age3>20.2</Age3>
@@ -76,7 +75,7 @@
           </DailyCigarette>
        <DailyCigarette>
               
-              <Year>2009</Year>
+              <Year2>2009</Year2>
               <Age1>2</Age1>
               <Age2>16.5</Age2>
               <Age3>19.3</Age3>
@@ -85,7 +84,7 @@
           </DailyCigarette>
        <DailyCigarette>
               
-              <Year>2010</Year>
+              <Year2>2010</Year2>
               <Age1>1.9</Age1>
               <Age2>15.9</Age2>
               <Age3>18.7</Age3>
@@ -94,7 +93,7 @@
           </DailyCigarette>
        <DailyCigarette>
               
-              <Year>2011</Year>
+              <Year2>2011</Year2>
               <Age1>1.8</Age1>
               <Age2>15.2</Age2>
               <Age3>18.5</Age3>

@@ -9,7 +9,15 @@
     <script src="js/highcharts.js"></script>
     <script src="js/exporting.js"></script>
     <script type="text/javascript">
-        console.log("page load");
+	console.log("page load");
+	var DailyCigarette = [];
+	var Year2 = [];
+	var Age1 = [];
+	var Age2 =[];
+	var Age3 = [];
+	var Age4 = [];
+	var Age5 = [];
+        
                         var Year = [];
                         var SmokingPercent = [];
                         var CigaretteConsumption = [];
@@ -39,18 +47,15 @@
 					/*}); //(this)CigaretteConsumption*/
 					}); //CigaretteConsumption
 					
-					writeChart();
+					parsexml2();
 				} //success function
     
 		
 		           });//ajax for line graph
                         
-         }); //documentready
-        
-        var DailyCigarette = [];
-        
-        $(document).ready(function(){
-            console.log('SUCCESS');
+          }); //documentready
+			function parsexml2(){
+			    console.log("parsexml2");
                          $.ajax({
 				type: "GET",
 				url: "ByAge.xml",
@@ -60,17 +65,25 @@
                                     
                                     $(xml).find('DailyCigarette').each(function(){
                                         console.log("found daily");
+				    var $DailyCigarette = $(this);
+				    Year2.push(parseInt($DailyCigarette.find('Year2').text()))
+				    Age1.push(parseInt($DailyCigarette.find('Age1').text()))
+				    Age2.push(parseInt($DailyCigarette.find('Age2').text()))
+				    Age3.push(parseInt($DailyCigarette.find('Age3').text()))
+				    Age4.push(parseInt($DailyCigarette.find('Age4').text()))
+				    Age5.push(parseInt($DailyCigarette.find('Age5').text()))
+				    
                                         
                                     });//end dailycigarette
                                     
                                     
-                                    
+                                    writeChart();
                                     
                                 }//success2
                                     
-		           });//ajax for bar graph
+		           });//close ajax
                          
-         }); //documentready2
+			};//closeparsexml
                                     
                                     
     
@@ -118,7 +131,7 @@ function writeChart () {
                 data: SmokingPercent
             }]//ends series
         });//ends chart1
-        /*
+        
         
         $('#chart2').highcharts({
     
@@ -127,54 +140,59 @@ function writeChart () {
             },
     
             title: {
-                text: 'Total fruit consumtion, grouped by gender'
+                text: 'Percent of Daily Smokers by Age'
             },
     
             xAxis: {
-                categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                categories: Year2,
+                title: {
+                    text: 'Year'
+                }
             },
     
             yAxis: {
                 allowDecimals: false,
                 min: 0,
+		max: 21, 
                 title: {
-                    text: 'Number of fruits'
+                    text: 'Percent who smoke daily'
                 }
             },
     
             tooltip: {
-                formatter: function() {
-                    return '<b>'+ this.x +'</b><br/>'+
-                        this.series.name +': '+ this.y +'<br/>'+
-                        'Total: '+ this.point.stackTotal;
-                }
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
             },
-    
             plotOptions: {
                 column: {
-                    stacking: 'normal'
+                    pointPadding: 0.2,
+                    borderWidth: 0
                 }
             },
     
             series: [{
-                name: 'John',
-                data: [5, 3, 4, 7, 2],
-                stack: 'male'
+                name: '12-17 years old',
+                data: Age1,
             }, {
-                name: 'Joe',
-                data: [3, 4, 4, 2, 5],
-                stack: 'male'
+                name: '18-25 years old',
+                data: Age2,
             }, {
-                name: 'Jane',
-                data: [2, 5, 6, 2, 1],
-                stack: 'female'
+                name: '26-34 years old',
+                data: Age3,
             }, {
-                name: 'Janet',
-                data: [3, 0, 4, 4, 3],
-                stack: 'female'
+                name: '35-49 years old',
+                data: Age4,
+	    },
+	       {
+		name: '50+ years old',
+		data: Age5,
             }]//ends series
         });//ends Chart2
-        */
+        
 }//ends writeChart
                                     
                                     
