@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Cigarette Consumption</title>
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/exporting.js"></script>
+    <script type="text/javascript">
+        console.log("page load");
+                        var Year = [];
+                        var SmokingPercent = [];
+                        var CigaretteConsumption = [];
+                        var buildHTML;
+        
+        $(document).ready(function(){
+            console.log("doc ready");
+			$.ajax({
+				type: "GET",
+				url: "Total.xml",
+				dataType: "xml",
+				success: function(xml) {
+                                    console.log("xml success");
+                                    
+                                    $(xml).find('CigaretteConsumption').each(function(){
+                                        console.log("found cigs");
+                                                
+                                                var $CigaretteConsumption = $(this);
+						/*$(this).find('CigaretteConsumption').each(function(){*/
+                                                Year.push(parseInt($CigaretteConsumption.find('Year').text()))
+                                                /*Year.push(parseInt($(this).find('Year').text())*/
+                                                SmokingPercent.push(parseInt($CigaretteConsumption.find('SmokingPercent').text()))
+                                                
+						/*console.log(SmokingPercent);
+                                                console.log(Year);*/
+						
+					/*}); //(this)CigaretteConsumption*/
+					}); //CigaretteConsumption
+					
+					writeChart();
+				} //success function
+    
+		
+		           });//ajax for line graph
+                        
+         }); //documentready
+        
+        var DailyCigarette = [];
+        
+        $(document).ready(function(){
+            console.log('SUCCESS');
+                         $.ajax({
+				type: "GET",
+				url: "ByAge.xml",
+				dataType: "xml",
+				success: function(xml) {
+                                    console.log("xml success 2");
+                                    
+                                    $(xml).find('DailyCigarette').each(function(){
+                                        console.log("found daily");
+                                        
+                                    });//end dailycigarette
+                                    
+                                    
+                                    
+                                    
+                                }//success2
+                                    
+		           });//ajax for bar graph
+                         
+         }); //documentready2
+                                    
+                                    
+    
+    
+    
+function writeChart () {
+        
+        $('#chart1').highcharts({
+            title: {
+                text: 'Cigarette Consumption in the U.S.A',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'Mouse over to see percent of adults smoking each year',
+                x: -20
+            },
+            xAxis: {
+                categories: Year,
+                title: {
+                    text: 'Year'
+                }
+            },
+            yAxis: {
+                categories: SmokingPercent,
+                title: {
+                    text: 'Percent of Adults'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '%'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: 'U.S.A',
+                data: SmokingPercent
+            }]//ends series
+        });//ends chart1
+        /*
+        
+        $('#chart2').highcharts({
+    
+            chart: {
+                type: 'column'
+            },
+    
+            title: {
+                text: 'Total fruit consumtion, grouped by gender'
+            },
+    
+            xAxis: {
+                categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+            },
+    
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'Number of fruits'
+                }
+            },
+    
+            tooltip: {
+                formatter: function() {
+                    return '<b>'+ this.x +'</b><br/>'+
+                        this.series.name +': '+ this.y +'<br/>'+
+                        'Total: '+ this.point.stackTotal;
+                }
+            },
+    
+            plotOptions: {
+                column: {
+                    stacking: 'normal'
+                }
+            },
+    
+            series: [{
+                name: 'John',
+                data: [5, 3, 4, 7, 2],
+                stack: 'male'
+            }, {
+                name: 'Joe',
+                data: [3, 4, 4, 2, 5],
+                stack: 'male'
+            }, {
+                name: 'Jane',
+                data: [2, 5, 6, 2, 1],
+                stack: 'female'
+            }, {
+                name: 'Janet',
+                data: [3, 0, 4, 4, 3],
+                stack: 'female'
+            }]//ends series
+        });//ends Chart2
+        */
+}//ends writeChart
+                                    
+                                    
+                                    
+                                    
+    </script> 
+    
+    
+</head>
+
+<body>
+
+    
+<div id="chart1" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="chart2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+
+</body>
+</html>

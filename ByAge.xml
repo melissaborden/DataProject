@@ -1,0 +1,105 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Document>
+          <!--Created with XmlGrid Free Online XML Editor (http://xmlgrid.net)-->
+       
+       <DailyCigarette>
+              <Year>2001</Year>
+              <Age1>4.5</Age1>
+              <Age2>20.8</Age2>
+              <Age3>19.3</Age3>
+              <Age4>20.3</Age4>
+              <Age5>11.9</Age5>
+          </DailyCigarette>
+       <DailyCigarette>
+              
+              <Year>2002</Year>
+              <Age1>4.1</Age1>
+              <Age2>21.2</Age2>
+              <Age3>19.1</Age3>
+              <Age4>21.4</Age4>
+              <Age5>13.1</Age5>
+          </DailyCigarette>
+       <DailyCigarette>
+              
+              <Year>2003</Year>
+              <Age1>3.6</Age1>
+              <Age2>21.3</Age2>
+              <Age3>20</Age3>
+              <Age4>20.5</Age4>
+              <Age5>12.3</Age5>
+          </DailyCigarette>
+       <DailyCigarette>
+              
+              <Year>2004</Year>
+              <Age1>3.2</Age1>
+              <Age2>20.8</Age2>
+              <Age3>18.8</Age3>
+              <Age4>20.5</Age4>
+              <Age5>12.5</Age5>
+          </DailyCigarette>
+       <DailyCigarette>
+              
+              <Year>2005</Year>
+              <Age1>2.9</Age1>
+              <Age2>19.7</Age2>
+              <Age3>20.5</Age3>
+              <Age4>20.5</Age4>
+              <Age5>12.7</Age5>
+          </DailyCigarette>
+       <DailyCigarette>
+              
+              <Year>2006</Year>
+              <Age1>2.9</Age1>
+              <Age2>18.9</Age2>
+              <Age3>20.3</Age3>
+              <Age4>20</Age4>
+              <Age5>12.9</Age5>
+          </DailyCigarette>
+       <DailyCigarette>
+              
+              <Year>2007</Year>
+              <Age1>2.7</Age1>
+              <Age2>17.9</Age2>
+              <Age3>18.5</Age3>
+              <Age4>19.1</Age4>
+              <Age5>12.5</Age5>
+          </DailyCigarette>
+       <DailyCigarette>
+              
+              <Year>2008</Year>
+              <Age1>2</Age1>
+              <Age2>17</Age2>
+              <Age3>20.2</Age3>
+              <Age4>18.4</Age4>
+              <Age5>12.5</Age5>
+          </DailyCigarette>
+       <DailyCigarette>
+              
+              <Year>2009</Year>
+              <Age1>2</Age1>
+              <Age2>16.5</Age2>
+              <Age3>19.3</Age3>
+              <Age4>17.9</Age4>
+              <Age5>12.9</Age5>
+          </DailyCigarette>
+       <DailyCigarette>
+              
+              <Year>2010</Year>
+              <Age1>1.9</Age1>
+              <Age2>15.9</Age2>
+              <Age3>18.7</Age3>
+              <Age4>16.7</Age4>
+              <Age5>12.4</Age5>
+          </DailyCigarette>
+       <DailyCigarette>
+              
+              <Year>2011</Year>
+              <Age1>1.8</Age1>
+              <Age2>15.2</Age2>
+              <Age3>18.5</Age3>
+              <Age4>17.3</Age4>
+              <Age5>11.7</Age5>
+          </DailyCigarette>
+   </Document>
+

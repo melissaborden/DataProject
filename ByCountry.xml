@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<document>
+ <row>
+  <Country>Country</Country >
+  <Consumption>Per Capita Consumption</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Afghanistan</Country >
+  <Consumption>61</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Albania</Country >
+  <Consumption>1,116</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Argentina</Country >
+  <Consumption>1042</Consumption >
+   </row>
+ 
+ <row>
+  <Country>Australia</Country >
+  <Consumption>1034</Consumption >
+  </row>
+ 
+ <row>
+  <Country>Azerbaijan</Country >
+  <Consumption>1877</Consumption >
+  </row>
+ 
+ <row>
+  <Country>Belarus</Country >
+  <Consumption>2266</Consumption >
+  </row>
+ 
+ <row>
+  <Country>Belgium</Country >
+  <Consumption>1455</Consumption >
+  </row>
+ 
+ <row>
+  <Country>Bolivia</Country >
+  <Consumption>179</Consumption >
+  </row>
+ 
+ <row>
+  <Country>Brazil</Country >
+  <Consumption>504</Consumption >
+  </row>
+ 
+ <row>
+  <Country>Bulgaria</Country >
+  <Consumption>2822</Consumption >
+  </row>
+ 
+ <row>
+  <Country>Canada</Country >
+  <Consumption>809</Consumption >
+  </row>
+ 
+ <row>
+  <Country>Chile</Country >
+  <Consumption>860</Consumption >
+  </row>
+ 
+ <row>
+  <Country>China</Country >
+  <Consumption>1,711</Consumption >
+  </row>
+ 
+ <row>
+  <Country>Cuba</Country >
+  <Consumption>1261</Consumption >
+  </row>
+ 
+ <row>
+  <Country>Czech Republic</Country >
+  <Consumption>2125</Consumption >
+  </row>
+ 
+ <row>
+  <Country>Egypt</Country >
+  <Consumption>1,104</Consumption >
+  </row>
+ 
+ <row>
+  <Country>Estonia</Country >
+  <Consumption>1523</Consumption >
+ </row>
+ 
+ <row>
+  <Country>France</Country >
+  <Consumption>854</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Germany</Country >
+  <Consumption>1045</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Greece</Country >
+  <Consumption>2797</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Guatamala</Country >
+  <Consumption>235</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Haiti</Country >
+  <Consumption>100</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Hungary</Country >
+  <Consumption>1518</Consumption >
+ </row>
+ 
+ <row>
+  <Country>India</Country >
+  <Consumption>96</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Iran</Country >
+  <Consumption>657</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Iraq</Country >
+  <Consumption>864</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Ireland</Country >
+  <Consumption>1006</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Italy</Country >
+  <Consumption>1475</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Japan</Country >
+  <Consumption>1841</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Lebanon</Country >
+  <Consumption>2138</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Mexico</Country >
+  <Consumption>371</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Norway</Country >
+  <Consumption>534</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Pakistan</Country >
+  <Consumption>468</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Poland</Country >
+  <Consumption>1586</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Russia</Country >
+  <Consumption>2786</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Serbia</Country >
+  <Consumption>2861</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Slovenia</Country >
+  <Consumption>2369</Consumption >
+ </row>
+ 
+ <row>
+  <Country>South Africa</Country >
+  <Consumption>459</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Spain</Country >
+  <Consumption>1,757</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Switzerland</Country >
+  <Consumption>1,722</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Tunisia</Country >
+  <Consumption>1628</Consumption >
+ </row>
+ 
+ <row>
+  <Country>Ukraine</Country >
+  <Consumption>2,401</Consumption >
+ </row>
+ 
+ <row>
+  <Country>United Kingdom</Country >
+  <Consumption>750</Consumption >
+ </row>
+ 
+ <row>
+  <Country>United States of America</Country >
+  <Consumption>1,028</Consumption >
+ </row>
+ 
+</document>

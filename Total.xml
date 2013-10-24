@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<document>
+   <Totals>
+     <CigaretteConsumption>
+      <Year>1965</Year >
+      <SmokingPercent>42.4</SmokingPercent >
+     </CigaretteConsumption>
+     <CigaretteConsumption>
+        <Year>1970</Year >
+        <SmokingPercent>37.4</SmokingPercent >
+     </CigaretteConsumption>
+     <CigaretteConsumption>
+        <Year>1974</Year >
+        <SmokingPercent>37.1</SmokingPercent >
+     </CigaretteConsumption>
+     <CigaretteConsumption>
+        <Year>1978</Year >
+        <SmokingPercent>34.1</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>1980</Year >
+        <SmokingPercent>33.2</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>1983</Year >
+        <SmokingPercent>32.1</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>1985</Year >
+        <SmokingPercent>30.1</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+     <Year>1987</Year >
+     <SmokingPercent>28.8</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>1990</Year >
+        <SmokingPercent>25.5</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>1993</Year >
+        <SmokingPercent>25</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>1995</Year >
+        <SmokingPercent>24.7</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>1997</Year >
+        <SmokingPercent>24.7</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>1999</Year >
+        <SmokingPercent>23.5</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>2001</Year >
+        <SmokingPercent>22.8</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>2002</Year >
+        <SmokingPercent>22.5</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>2003</Year >
+        <SmokingPercent>21.6</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>2004</Year >
+        <SmokingPercent>20.9</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>2005</Year >
+        <SmokingPercent>20.9</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>2006</Year >
+        <SmokingPercent>20.8</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>2007</Year >
+        <SmokingPercent>19.8</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>2008</Year >
+        <SmokingPercent>20.6</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>2009</Year >
+        <SmokingPercent>20.6</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>2010</Year >
+        <SmokingPercent>19.3</SmokingPercent >
+    </CigaretteConsumption>
+    <CigaretteConsumption>
+        <Year>2011</Year >
+         <SmokingPercent>18.9</SmokingPercent >
+    </CigaretteConsumption>
+    </Totals>
+</document>
+
+
