@@ -324,14 +324,14 @@ textarea {
 }
 
 a {
-  color: #428bca;
+  color: #1184A5;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #2a6496;
-  text-decoration: underline;
+  color: #BCB199;
+  text-decoration: none;
 }
 
 a:focus {
@@ -746,10 +746,13 @@ pre code {
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
+  background-color:#FFFFFF;
+  -moz-border-radius: 10px;
+border-radius: 10px;
 }
 
 .container:before,
@@ -5316,7 +5319,7 @@ a.list-group-item:focus {
 
 .panel {
   margin-bottom: 20px;
-  background-color: #ffffff;
+  background-color: #F1F0E8;
   border: 1px solid transparent;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -5433,7 +5436,7 @@ a.list-group-item:focus {
 
 .panel-default > .panel-heading {
   color: #333333;
-  background-color: #f5f5f5;
+  background-color: #E7E0D2;
   border-color: #dddddd;
 }
 

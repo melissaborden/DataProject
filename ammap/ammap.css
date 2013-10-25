@@ -12,7 +12,7 @@
 {
    font-size:11px;
    font-family:verdana,helvetica,arial,sans-serif;    
-   background-color:#FFFFFF;
+   background-color:#CEE6F2;
    border-style:solid;
    border-color:#DADADA;
    border-width:1px;
@@ -25,7 +25,8 @@
    font-size:12px;
    font-weight:bold;
    font-family:verdana,helvetica,arial,sans-serif;
-   padding-bottom:5px;    
+   padding-bottom:5px;
+   background-color:#CEE6F2;
 }
 
 .ammapDescriptionWindowCloseButton
@@ -62,7 +63,7 @@
 
 .ammapObjectList a:hover 
 {
-    color:#CC0000;
+    color:#CEE6F2;;
     text-decoration:none;
     background:#FFFFFF;
     cursor:pointer;

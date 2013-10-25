@@ -17,7 +17,12 @@
     <script src="js/exporting.js"></script>
     <!--Bootstrap Javascript-->
     <script src="js/bootstrap.js"></script>
+    <script src="js/transition.js"></script>
+    <script src="js/tooltip.js"></script>
+   
+    
     <!--For my Map-->
+     <link href="ammap/ammap.css" rel="stylesheet">
     <script src="js/ammap.js" type="text/javascript"></script>
     <script src="ammap/maps/js/worldLow.js" type="text/javascript"></script>
     
@@ -105,27 +110,51 @@
 function writeChart () {
         
         $('#chart1').highcharts({
+	 
+	  chart: {
+	      backgroundColor: '#F1F0E8',	
+	      type: 'line'
+	    },
             title: {
                 text: 'Cigarette Consumption in the U.S.A',
+		style: {
+		 color: '#908670',
+		 fontFamily: 'Interstate',
+		 fontWeight: 'bold'
+		},
                 x: -20 //center
             },
             subtitle: {
                 text: 'Mouse over to see percent of adults smoking each year',
+		style: {
+		 color: '#908670',
+		 fontFamily: 'Interstate',
+		},
                 x: -20
             },
             xAxis: {
 		tickInterval: 3,
+		tickColor: '#F1F0E8',
                 categories: Year,
                 title: {
-                    text: 'Year'
+                    text: 'Year',
+		  style: {
+		    color: '#908670',
+		    fontFamily: 'Interstate',
+		  },
                 }
+	       
             },
             yAxis: {
 		min: 0,
 		max: 45,
                 categories: null,
                 title: {
-                    text: 'Percent of Adults'
+                    text: 'Percent of Adults',
+		    style: {
+		    color: '#908670',
+		    fontFamily: 'Interstate',
+		  },
                 },
                 plotLines: [{
                     value: 0,
@@ -137,11 +166,21 @@ function writeChart () {
                 valueSuffix: '%'
             },
             legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle',
-                borderWidth: 0
+		itemHiddenStyle: {
+                color: '#333'
+	       }
+                //layout: 'vertical',
+                //align: 'left',
+                //verticalAlign: 'middle',
+                //borderWidth: 0
             },
+	    
+	    plotOptions: {
+		
+		  series: {
+		    color: '#58585B'
+		  }
+	    },
             series: [{
                 name: 'U.S.A',
                 data: SmokingPercent
@@ -152,17 +191,27 @@ function writeChart () {
         $('#chart2').highcharts({
     
             chart: {
+		backgroundColor: '#F1F0E8',
                 type: 'column'
             },
     
             title: {
-                text: 'Percent of Daily Smokers by Age'
+                text: 'Percent of Daily Smokers by Age',
+		style: {
+		 color: '#908670',
+		 fontFamily: 'Interstate',
+		 fontWeight: 'bold'
+		},
             },
     
             xAxis: {
                 categories: Year2,
                 title: {
-                    text: 'Year'
+                    text: 'Year',
+		    style: {
+		    color: '#908670',
+		    fontFamily: 'Interstate',
+		  },
                 }
             },
     
@@ -171,7 +220,11 @@ function writeChart () {
                 min: 0,
 		max: 21, 
                 title: {
-                    text: 'Percent who smoke daily'
+                    text: 'Percent who smoke daily',
+		    style: {
+		    color: '#908670',
+		    fontFamily: 'Interstate',
+		  },
                 }
             },
     
@@ -193,19 +246,24 @@ function writeChart () {
             series: [{
                 name: '12-17 years old',
                 data: Age1,
+		color: '#231F20'
             }, {
                 name: '18-25 years old',
                 data: Age2,
+		color: '#58585B'
             }, {
                 name: '26-34 years old',
                 data: Age3,
+		color: '#808284'
             }, {
                 name: '35-49 years old',
                 data: Age4,
+		color: '#A7A9AB'
 	    },
 	       {
 		name: '50+ years old',
 		data: Age5,
+		color:'#D1D2D4'
             }]//ends series
         });//ends Chart2
         
@@ -483,14 +541,132 @@ function writeChart () {
 <body>
     <div class="container">
     <div class="row">
-	
-	
- 
-
+     <div class="col-md-12"><h2>Cigarette Consumption Information &nbsp;<img class="cigarette" src="images/cigarette.png" width="100" height="50"></h2></div>
+    </div>
+    <div class="row">
+     <div class="col-md-12 deck"><p>How has cigarette consumption changed over time by age and location? </p></div>
+    </div>
     
-<div id="chart1" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-<div id="chart2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-<div id="mapdiv" style="width: 100%; background-color:#EEEEEE; height: 500px;"></div>
+    <!--Line divider-->
+   
+    <div class="row">
+     <div class="col-md-12"><hr></div>
+    </div><!--done with line divider-->
+   
+   
+    <!--dropdowns-->
+    <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Data Collection <!--<span class="fltr glyphicon glyphicon-chevron-down"></span>-->
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+        The trend in cigarette smoking amoung adults was collected by the Centers for Disease Control and Prevention from 1965 to 2011.
+	The most recent <a href="http://www.cdc.gov/tobacco/data_statistics/tables/trends/cig_smoking/index.htm">data</a> is from 2011. Differences amoung age groups from 2004 to 2011 comes from the
+	Substance Abuse and Mental Health Data Archive, which holds a <a href="http://www.icpsr.umich.edu/icpsrweb/SAMHDA/browse">list</a> of the National Surveys on Drug Use and Health. Although the most recent data shows a decline in cigarette consumption,
+	deaths from smoking and health risks have stayed the same. 
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          Health Risks  <!--<span class="fltr glyphicon glyphicon-chevron-down"></span>-->
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+        The leading cause of cancer related deaths amoung both men and females is lung cancer, but it is also the most preventable form of cancer in the United States. Tabacco in cigarettes
+	accounts for 87 percent of lung cancer deaths. Smoking also increases the risk of cancers of the mouth, lips, nose, larynx, esophagus, stomach, and more. After the first US Surgeon General's Report on Smoking and Health in 1964,
+	cigarette consumption has declined but 44 million American adults still smoke since 2011 data. 
+      </div>
+    </div>
+  </div>
+ </div>
+    
+    <!--adding space-->
+    &nbsp;
+   
+    <div class="row">
+     <div class="col-md-12">&nbsp;&nbsp;</div>
+    </div><!--done adding space-->
+    
+   
+    <!--my line graph-->
+    
+    <div class="row">
+     <div class="col-md-8"><h3>Cigarette Consumption Trends</h3><div id="chart1" style="width: 100%; height: 400px; margin: 0 auto"></div></div>
+     <div class="col-md-4"><h3>Deaths</h3><div class="box"><div class="numbers">1 <span class="between">of every</span> 5</div><div class="deaths">Deaths</div>
+      <div class= "smalltext">Caused by the harmful effects of cigarette smoking each year in the United States. One in every three cancer dealths would not
+      occur if nobody smoked.</div></div>
+      &nbsp;
+      <div class="box"><div class="numbers">+440,000</div><div class= "smalltext">Each year in the United States</div>
+      </div>
+    </div>
+    </div>
+    
+    <!--By Age Graph-->
+     <div class="row">
+      <div class="col-md-12"><h3>By Age</h3><div id="chart2" style="min-width: 310px; height: 400px; margin: 0 auto"></div></div>
+      </div> <!--closes row-->
+     
+ <!--Line divider-->
+   
+    <div class="row">
+     <div class="col-md-12"><hr></div>
+    </div><!--done with line divider-->
+    
+    <!--Global Information-->
+	
+    <div class="row">
+     <div class="col-md-3"><h3>Global Data</h3>
+     
+	 <div class="panel-group" id="accordion">
+	      <div class="panel panel-default">
+	      <div class="panel-heading">
+	      <h4 class="panel-title">
+		 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+		     Data Collection <!--<span class="fltr glyphicon glyphicon-chevron-down"></span>-->
+		 </a>
+	      </h4>
+	     </div>
+	 <div id="collapseThree" class="panel-collapse collapse in">
+	   <div class="panel-body">
+	     The Tabacco Atlas has recorded cigarette consumption per capita on its <a href="http://www.tobaccoatlas.org/uploads/Images/PDFs/TA4_pdf_world_tables.pdf">world tables</a>.
+	     The most recent annual cigarette consumption comes from 2009. In the chart below, search by country to see the price of a pack of cigarettes in U.S. dollars from 2010. 
+	  </div>
+	</div>
+      </div>
+	    <div class="panel panel-default">
+	     <div class="panel-heading">
+	        <h4 class="panel-title">
+		   <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+		      Global Impact <span class="fltr glyphicon glyphicon-globe"></span>
+		   </a>
+	        </h4>
+	     </div>
+	       <div id="collapseFour" class="panel-collapse collapse">
+	        <div class="panel-body">
+		  Nearly 20% of the world's population smokes cigarettes. The Tabacco Atlas found that while high-income countries consumption has been decreasing,
+		  low-and-middle-income countries consumption has been increasing. This increase offsets the decrease from the high-income countries. 
+	     </div>
+	     </div>
+	  </div>
+	 </div>
+     </div>
+	
+     
+     <div class="col-md-9">
+    <div id="mapdiv" style="width: 100%; background-color:#CEE6F2; height: 500px;"></div></div>
+     </div><!--ends row-->
+    
 
 
 
