@@ -2,228 +2,464 @@
 
 <document>
  <row>
-  <Country>Country</Country >
-  <Consumption>Per Capita Consumption</Consumption >
- </row>
- 
- <row>
   <Country>Afghanistan</Country >
   <Consumption>61</Consumption >
+  <IncomeGroup>low</IncomeGroup>
+  <PricePerPack>2.25</PricePerPack>
+  <ExciseTax>0</ExciseTax>
  </row>
  
  <row>
   <Country>Albania</Country >
-  <Consumption>1,116</Consumption >
+  <Consumption>1116</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>1.91</PricePerPack>
+  <ExciseTax>33.3</ExciseTax>
+ </row>
+ 
+ <row>
+  <Country>Algeria</Country >
+  <Consumption>775</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>4.15</PricePerPack>
+  <ExciseTax>40.2</ExciseTax>
  </row>
  
  <row>
   <Country>Argentina</Country >
   <Consumption>1042</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>1.67</PricePerPack>
+  <ExciseTax>68.8</ExciseTax>
    </row>
  
  <row>
   <Country>Australia</Country >
   <Consumption>1034</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>12.14</PricePerPack>
+  <ExciseTax>54.7</ExciseTax>
   </row>
  
  <row>
   <Country>Azerbaijan</Country >
   <Consumption>1877</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>1.88</PricePerPack>
+  <ExciseTax>9.3</ExciseTax>
   </row>
  
  <row>
   <Country>Belarus</Country >
   <Consumption>2266</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>1.44</PricePerPack>
+  <ExciseTax>10.0</ExciseTax>
   </row>
  
  <row>
   <Country>Belgium</Country >
   <Consumption>1455</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>6.97</PricePerPack>
+  <ExciseTax>59.5</ExciseTax>
   </row>
  
  <row>
   <Country>Bolivia</Country >
   <Consumption>179</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>1.56</PricePerPack>
+  <ExciseTax>29.0</ExciseTax>
   </row>
  
  <row>
   <Country>Brazil</Country >
   <Consumption>504</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>2.73</PricePerPack>
+  <ExciseTax>26.3</ExciseTax>
   </row>
  
  <row>
   <Country>Bulgaria</Country >
   <Consumption>2822</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>3.29</PricePerPack>
+  <ExciseTax>68.9</ExciseTax>
   </row>
+ 
+  <row>
+  <Country>Botswana</Country >
+  <Consumption>336</Consumption >
+  <IncomeGroup>low</IncomeGroup>
+  <PricePerPack>2.52</PricePerPack>
+  <ExciseTax>39.1</ExciseTax>
+  </row>
+ 
  
  <row>
   <Country>Canada</Country >
   <Consumption>809</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>10.51</PricePerPack>
+  <ExciseTax>58.0</ExciseTax>
+  
   </row>
  
  <row>
   <Country>Chile</Country >
   <Consumption>860</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>3.80</PricePerPack>
+  <ExciseTax>60.4</ExciseTax>
   </row>
  
  <row>
   <Country>China</Country >
-  <Consumption>1,711</Consumption >
+  <Consumption>1711</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>2.25</PricePerPack>
+  <ExciseTax>26.2</ExciseTax>
+  </row>
+ 
+ <row>
+  <Country>Colombia</Country >
+  <Consumption>412</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>1.75</PricePerPack>
+  <ExciseTax>40.3</ExciseTax>
   </row>
  
  <row>
   <Country>Cuba</Country >
   <Consumption>1261</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>3.11</PricePerPack>
+  <ExciseTax>87.1</ExciseTax>
   </row>
  
  <row>
   <Country>Czech Republic</Country >
   <Consumption>2125</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>4.33</PricePerPack>
+  <ExciseTax>62.0</ExciseTax>
+  </row>
+ 
+ <row>
+  <Country>Denmark</Country >
+  <Consumption>1413</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>6.94</PricePerPack>
+  <ExciseTax>60.9</ExciseTax>
   </row>
  
  <row>
   <Country>Egypt</Country >
-  <Consumption>1,104</Consumption >
+  <Consumption>1104</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>1.69</PricePerPack>
+  <ExciseTax>73.8</ExciseTax>
   </row>
  
  <row>
   <Country>Estonia</Country >
   <Consumption>1523</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>3.33</PricePerPack>
+  <ExciseTax>67.8</ExciseTax>
  </row>
  
  <row>
   <Country>France</Country >
   <Consumption>854</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>8.31</PricePerPack>
+  <ExciseTax>64.3</ExciseTax>
  </row>
  
  <row>
   <Country>Germany</Country >
   <Consumption>1045</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>6.86</PricePerPack>
+  <ExciseTax>60.7</ExciseTax>
  </row>
  
  <row>
   <Country>Greece</Country >
   <Consumption>2797</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>5.21</PricePerPack>
+  <ExciseTax>65.0</ExciseTax>
  </row>
  
  <row>
   <Country>Guatamala</Country >
   <Consumption>235</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>1.89</PricePerPack>
+  <ExciseTax>46.0</ExciseTax>
  </row>
  
  <row>
   <Country>Haiti</Country >
   <Consumption>100</Consumption >
+  <IncomeGroup>low</IncomeGroup>
+  <PricePerPack>1.66</PricePerPack>
+  <ExciseTax>n/a</ExciseTax>
  </row>
  
  <row>
   <Country>Hungary</Country >
   <Consumption>1518</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>3.56</PricePerPack>
+  <ExciseTax>60.6</ExciseTax>
  </row>
  
  <row>
   <Country>India</Country >
   <Consumption>96</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>2.03</PricePerPack>
+  <ExciseTax>27.7</ExciseTax>
  </row>
  
  <row>
   <Country>Iran</Country >
   <Consumption>657</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>2.03</PricePerPack>
+  <ExciseTax>0.0</ExciseTax>
  </row>
  
  <row>
   <Country>Iraq</Country >
   <Consumption>864</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>2.56</PricePerPack>
+  <ExciseTax>0.0</ExciseTax>
  </row>
  
  <row>
   <Country>Ireland</Country >
   <Consumption>1006</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>10.92</PricePerPack>
+  <ExciseTax>61.6</ExciseTax>
  </row>
  
  <row>
   <Country>Italy</Country >
   <Consumption>1475</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>6.48</PricePerPack>
+  <ExciseTax>58.3</ExciseTax>
  </row>
  
  <row>
   <Country>Japan</Country >
   <Consumption>1841</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>5.34</PricePerPack>
+  <ExciseTax>58.3</ExciseTax>
  </row>
+ 
+  <row>
+  <Country>Kazakhstan</Country >
+  <Consumption>1934</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>1.09</PricePerPack>
+  <ExciseTax>16.0</ExciseTax>
+ </row>
+ 
  
  <row>
   <Country>Lebanon</Country >
   <Consumption>2138</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>1.50</PricePerPack>
+  <ExciseTax>36.6</ExciseTax>
+ </row>
+ 
+ <row>
+  <Country>Libya</Country >
+  <Consumption>818</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>1.97</PricePerPack>
+  <ExciseTax>6.8</ExciseTax>
  </row>
  
  <row>
   <Country>Mexico</Country >
   <Consumption>371</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>2.50</PricePerPack>
+  <ExciseTax>48.9</ExciseTax>
+ </row>
+ 
+  <row>
+  <Country>Mongolia</Country >
+  <Consumption>555</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>1.18</PricePerPack>
+  <ExciseTax>21.7</ExciseTax>
+ </row>
+ 
+ 
+ <row>
+  <Country>Morocco</Country >
+  <Consumption>500</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>3.98</PricePerPack>
+  <ExciseTax>50.6</ExciseTax>
  </row>
  
  <row>
   <Country>Norway</Country >
   <Consumption>534</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>15.11</PricePerPack>
+  <ExciseTax>52.3</ExciseTax>
  </row>
  
  <row>
   <Country>Pakistan</Country >
   <Consumption>468</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>1.23</PricePerPack>
+  <ExciseTax>47.9</ExciseTax>
+ </row>
+ 
+ <row>
+  <Country>Peru</Country >
+  <Consumption>137</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>2.53</PricePerPack>
+  <ExciseTax>31.1</ExciseTax>
  </row>
  
  <row>
   <Country>Poland</Country >
   <Consumption>1586</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>3.93</PricePerPack>
+  <ExciseTax>66.1</ExciseTax>
  </row>
  
  <row>
-  <Country>Russia</Country >
+  <Country>Russia Federation</Country >
   <Consumption>2786</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>1.74</PricePerPack>
+  <ExciseTax>19.7</ExciseTax>
+ </row>
+ 
+ <row>
+  <Country>Saudi Arabia</Country >
+  <Consumption>809</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>1.57</PricePerPack>
+  <ExciseTax>0.0</ExciseTax>
  </row>
  
  <row>
   <Country>Serbia</Country >
   <Consumption>2861</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>2.03</PricePerPack>
+  <ExciseTax>56.9</ExciseTax>
  </row>
  
  <row>
   <Country>Slovenia</Country >
   <Consumption>2369</Consumption >
- </row>
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>3.91</PricePerPack>
+  <ExciseTax>60.6</ExciseTax>
+  </row>
  
  <row>
   <Country>South Africa</Country >
   <Consumption>459</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>4.14</PricePerPack>
+  <ExciseTax>40.7</ExciseTax>
+  
  </row>
  
  <row>
   <Country>Spain</Country >
-  <Consumption>1,757</Consumption >
+  <Consumption>1757</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>5.99</PricePerPack>
+  <ExciseTax>64.6</ExciseTax>
  </row>
  
+  <row>
+  <Country>Sweden</Country >
+  <Consumption>715</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>7.74</PricePerPack>
+  <ExciseTax>56.5</ExciseTax>
+ </row>
+
  <row>
   <Country>Switzerland</Country >
-  <Consumption>1,722</Consumption >
+  <Consumption>1722</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>8.28</PricePerPack>
+  <ExciseTax>55.4</ExciseTax>
  </row>
- 
+  
  <row>
   <Country>Tunisia</Country >
   <Consumption>1628</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>2.95</PricePerPack>
+  <ExciseTax>49.6</ExciseTax>
+ </row>
+ 
+ <row>
+  <Country>Turkey</Country >
+  <Consumption>1399</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>4.38</PricePerPack>
+  <ExciseTax>63.0</ExciseTax>
  </row>
  
  <row>
   <Country>Ukraine</Country >
-  <Consumption>2,401</Consumption >
+  <Consumption>2401</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>1.26</PricePerPack>
+  <ExciseTax>53.6</ExciseTax>
  </row>
  
  <row>
   <Country>United Kingdom</Country >
   <Consumption>750</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>10.99</PricePerPack>
+  <ExciseTax>73.5</ExciseTax>
  </row>
  
  <row>
   <Country>United States of America</Country >
-  <Consumption>1,028</Consumption >
+  <Consumption>1028</Consumption >
+  <IncomeGroup>high</IncomeGroup>
+  <PricePerPack>6.36</PricePerPack>
+  <ExciseTax>39.9</ExciseTax>
+ </row>
+ 
+ <row>
+  <Country>Venezuela</Country >
+  <Consumption>496</Consumption >
+  <IncomeGroup>middle</IncomeGroup>
+  <PricePerPack>4.66</PricePerPack>
+  <ExciseTax>28.50</ExciseTax>
  </row>
  
 </document>

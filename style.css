@@ -1,0 +1,13 @@
+
+body {
+  
+   background:#DBDCDE;
+   background-image: url('images/grey_wash_wall.png');
+   background-repeat: repeat;
+}
+
+
+container {
+  padding-left: 20px;
+  padding-right: 20px;
+}

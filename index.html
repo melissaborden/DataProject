@@ -7,7 +7,10 @@
     
     <!--Bootstrap Style Sheet and Javascript-->
     <link href="dist/css/bootstrap.css" rel="stylesheet">
-   
+	
+	
+   <!--my personalized style sheet-->
+   <link href="style.css" rel="stylesheet">
     
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="js/highcharts.js"></script>
@@ -209,27 +212,266 @@ function writeChart () {
 }//ends writeChart
                                     
         //For My map
+	
+	var map;
+	
 	AmCharts.ready(function() {
-        // create AmMap object
-        var map = new AmCharts.AmMap();
-        // set path to images
-        map.pathToImages = "ammap/images/";
-	
-	var dataProvider = {
-            mapVar: AmCharts.maps.worldLow,
-            areas: [{id:"AU", color:"#CC0000"},{id:"US", color:"#00CC00"},{id:"FR", color:"#0000CC"}]                 
-        }; 
-	
-	 map.dataProvider = dataProvider;
-	
-	map.areasSettings = {
-            autoZoom: true,
-            selectedColor: "#CC0000"
-        };
-	
-	 map.write("mapdiv");               
-        
-    });
+			    map = new AmCharts.AmMap();
+			    map.pathToImages = "../ammap/images/";
+			    //map.panEventsEnabled = true; // this line enables pinch-zooming and dragging on touch devices
+			    
+			    map.colorSteps = 4;
+			    map.balloon.color = "#000000";
+			    var dataProvider = {
+			        mapVar: AmCharts.maps.worldLow,
+			
+			        areas: [
+			            {
+			            id: "AF",
+				    title: 'Afghanistan <b> 61</b>',
+			            value: 4447100},
+			        {
+			            id: "AL",
+				    title: 'Albania <b> 1116</b>',
+			            value: 626932},
+			        {
+			            id: "DZ",
+				    title: 'Algeria 775',
+			            value: 5130632},
+			        {
+			            id: "AR",
+				    title: 'Argentina <b> 1042</b>',
+			            value: 2673400},
+			        {
+			            id: "AU",
+				    title: 'Australia <b> 1034</b>',
+			            value: 33871648},
+			        {
+			            id: "AZ",
+				    title: 'Azerbaijan <b>1877 </b>',
+			            value: 4301261},
+			        {
+			           id: "BY",
+				   title: 'Belarus <b>2266 </b>',
+			            value: 3405565},
+			        {
+			            id: "BE",
+				    title: 'Belgium <b>1455</b>',
+			            value: 783600},
+			        {
+			            id: "BO",
+				    title: 'Bolivia <b>179</b>',
+			            value: 15982378},
+			        {
+			            id: "BR",
+				    title: 'Brazil <b>504</b>',
+			            value: 8186453},
+			        {
+			            id: "BG",
+				    title: 'Bulgaria <b>2822</b>',
+				    value: 1211537},
+			        {
+			            id: "BW",
+				    title: 'Botswana <b>336</b>',
+			            value: 1293953},
+			        {
+			            id: "CA",
+				    title: 'Canada <b>809</b>',
+			            value: 12419293},
+			        {
+			            id: "CL",
+				    title: 'Chile <b>860</b>',
+			            value: 6080485},
+			        {
+			            id: "CN",
+				    title: 'China <b>1711</b>',
+			            value: 2926324},
+			        {
+			            id: "CO",
+				    title: 'Colombia <b>412</b>',
+			            value: 2688418},
+			        {
+			            id: "CU",
+				    title: 'Cuba <b>1261</b>',
+			            value: 4041769},
+			        {
+			            id: "CZ",
+				    title: 'Czech Republic <b>2125</b>',
+			            value: 4468976},
+			        {
+			            id: "DK",
+				    title: 'Denmark <b>1413</b>',
+			            value: 1274923},
+			        {
+			            id: "EG",
+				    title: 'Egypt <b>1104</b>',
+			            value: 5296486},
+			        {
+			            id: "EE",
+				    title: 'Estonia <b>1523</b>',
+			            value: 6349097},
+			        {
+			            id: "FR",
+				    title: 'France <b>854</b>',
+			            value: 9938444},
+			        {
+			            id: "DE",
+				    title: 'Germany <b>1045</b>',
+			            value: 4919479},
+			        {
+			            id: "GR",
+				    title: 'Greece <b>2797</b>',
+			            value: 2844658},
+			        {
+			            id: "GT",
+				    title: 'Guatamala <b>235</b>',
+			            value: 5595211},
+			        {
+			            id: "HT",
+				    title: 'Haiti <b>100</b>',
+			            value: 902195},
+			        {
+			            id: "HU",
+				    title: 'Hungary <b>1518</b>',
+			            value: 1711263},
+			        {
+			            id: "IN",
+				    title: 'India <b>96</b>',
+			            value: 1998257},
+			        {
+			            id: "IR",
+				    title: 'Iran <b>657</b>',
+			            value: 1235786},
+			        {
+			            id: "IQ",
+				    title: 'Iraq <b>864</b>',
+			            value: 8414350},
+			        {
+			            id: "IE",
+				    title: 'Ireland <b>1006</b>',
+			            value: 1819046},
+			        {
+			            id: "IT",
+				    title: 'Italy <b>1475</b>',
+			            value: 18976457},
+			        {
+			            id: "JP",
+				    title: 'Japan <b>1841</b>',
+			            value: 8049313},
+				{
+			            id: "KZ",
+				    title: 'Kazakhstan <b>1934</b>',
+			            value: 8049313},
+				    
+			        {
+			            id: "LB",
+				    title: 'Lebanon <b>2138</b>',
+			            value: 642200},
+			        {
+			            id: "LY",
+				    title: 'Libya <b>818</b>',
+			            value: 11353140},
+			        {
+			            id: "MX",
+				    title: 'Mexico <b>317</b>',
+			            value: 3450654},
+				{
+			            id: "MN",
+				    title: 'Mongolia <b>555</b>',
+			            value: 3450654},
+				    
+			        {
+			            id: "MA",
+				    title: 'Morocco <b>500</b>',
+			            value: 3421399},
+			        {
+			            id: "NO",
+				    title: 'Norway <b>534</b>',
+			            value: 12281054},
+			        {
+			            id: "PK",
+				    title: 'Pakistan <b>468</b>',
+			            value: 1048319},
+			        {
+			            id: "PE",
+				    title: 'Peru <b>137</b>',
+			            value: 4012012},
+			        {
+			            id: "PL",
+				    title: 'Poland <b>1586</b>',
+			            value: 754844},
+			        {
+			            id: "RU",
+				    title: 'Russia Federation <b>2786</b>',
+			            value: 5689283},
+			        {
+			            id: "SA",
+				     title: 'Saudi Arabia <b>809</b>',
+			            value: 20851820},
+			        {
+			            id: "RS",
+				    title: 'Serbia <b>2861</b>',
+			            value: 2233169},
+			        {
+			            id: "SI",
+				    title: 'Slovenia <b>2369</b>',
+			            value: 608827},
+			        {
+			            id: "ZA",
+				    title: 'South Africa <b>459</b>',
+			            value: 7078515},
+			        {
+			            id: "ES",
+				    title: 'Spain <b>1751</b>',
+			            value: 5894121},
+			        {
+			            id: "SE",
+				    title: 'Sweden <b>715</b>',
+			            value: 1808344},
+			        {
+			            id: "CH",
+				    title: 'Switzerland <b>1722</b>',
+			            value: 5363675},
+			        {
+			            id: "TN",
+				    title: 'Tunisia <b>1628</b>',
+			            value: 493782},
+				{
+			            id: "TR",
+				    title: 'Turkey <b>1399</b>',
+			            value: 493782},
+				{
+			            id: "UA",
+				    title: 'Ukraine <b>2401</b>',
+			            value: 493782},
+				    
+				{
+			            id: "GB",
+				    title: 'United Kingdom <b>750</b>',
+			            value: 493782},
+				{
+			            id: "US",
+				    title: 'United States of America <b>1028</b>',
+			            value: 493782},
+				{
+			            id: "VE",
+				    title: 'Venezuela <b>496</b>',
+			            value: 493782}]
+			    };
+			
+			    map.areasSettings = {
+			        autoZoom: true
+			    };
+			    map.dataProvider = dataProvider;
+			
+			    var valueLegend = new AmCharts.ValueLegend();
+			    valueLegend.right = 10;
+			    valueLegend.minValue = "1-499";
+			    valueLegend.maxValue = "2,500+";
+			    map.valueLegend = valueLegend;
+			
+			    map.write("mapdiv");
+			});
     
                                     
                                     
@@ -239,12 +481,26 @@ function writeChart () {
 </head>
 
 <body>
+    <div class="container">
+    <div class="row">
+	
+	
+ 
 
     
 <div id="chart1" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 <div id="chart2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-<div id="mapdiv" style="min-width: 310px; height: 400px;"></div>
+<div id="mapdiv" style="width: 100%; background-color:#EEEEEE; height: 500px;"></div>
 
 
+
+
+
+
+
+
+
+
+   </div><!--ends the container-->
 </body>
 </html>
