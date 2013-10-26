@@ -1,19 +1,38 @@
 
+@font-face {
+  font-family: InterstateBlackCondensed;
+  src: url(fonts/Interstate-BlackCondensed.otf);
+}
+
+@font-face {
+  font-family: InterstateRegularCompressed;
+  src: url(fonts/Interstate-RegularCondensed.otf);
+}
+
+
+
 body {
   
    background:#DBDCDE;
    background-image: url('images/grey_wash_wall.png');
    background-repeat: repeat;
-   font-family:Interstate;
    
+}
+
+p {
+   font-family:Century Old Style;
+   font-size:12pt;
 }
 
 
 
 h1 h2 h3 h4 h5 h6 {
-   font-family:Interstate;
-   font-size:45pt;
    text-align:right;
+}
+
+h2 {
+   font-size:28pt;
+   color:#908670;
 }
 
 h3 {
@@ -24,42 +43,54 @@ h3 {
 
 .deck {
    font-family:'Century Old Style';
-   font-size:13pt;
+   font-size:12pt;
    text-align:left;
    color: #908670;
 }
 
 .numbers {
-   font-family:Interstate;
-   font-weight: 300;
-   font-size:30pt;
+   font-family:InterstateBlackCondensed;
+   font-size:40pt;
    text-align:center;
-   color:#1184A5;
+   color:#C5DAE6;
+   
    
 }
 
+/*.numbers2 {
+   font-family:InterstateBlackCondensed;
+   font-size:60pt;
+   text-align:center;
+   color:#C5DAE6;
+   
+   
+}*/
+
 .deaths {
-   font-family:Interstate;
-   font-weight: 300;
+   font-family:InterstateBlackCondensed;
    font-size:20pt;
    text-align:center;
    color:#908670;
 }
 
 .smalltext {
-   font-family:Interstate;
+   font-family:InterstateRegularCompressed;
    font-weight: 300;
-   font-size:10pt;
+   font-size:11pt;
    text-align:left;
    padding-left:40px;
    padding-right:20px;
    padding-bottom:10px;
-   color:#888888;
+   color:#908670;
    
 }
 
 .cigarette {
    margin-top:-30px;
+}
+
+.bluearrow {
+   
 }
 
 .box {
@@ -69,11 +100,15 @@ h3 {
    border-width:1px;
 }
 
+.arrow {
+   font-size:16pt;
+}
+
 .between {
    color:#908670;
-   font-family:'Century Old Style'; 
-   font-size:20pt;
-   font-stretch: condensed;
+   font-family: InterstateBlackCondensed; 
+   font-size:30pt;
+   
 }
 
 .fltr {
@@ -87,3 +122,29 @@ h3 {
 #chart1 {
    background-color:#F1F0E8;
 }
+
+.maptitle {
+   font-family:InterstateRegularCompressed;
+   font-weight:400;
+   text-align:center;
+   color:#908670;
+   font-size:15pt;
+   margin-top:25px;
+}
+
+.table {
+   /*background-color:#908670;*/
+   width:100%;
+   font-family:InterstateRegularCompressed;
+}
+
+.table th {
+   background-color:#FFFFFF;
+}
+
+.headWhite{
+   background-color: #ffffff; 
+}
+
+
+

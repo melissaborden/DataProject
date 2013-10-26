@@ -19,6 +19,9 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/transition.js"></script>
     <script src="js/tooltip.js"></script>
+    
+    <!--Table-->
+    <script src="js/jquery.dataTables.js"></script>
    
     
     <!--For my Map-->
@@ -28,6 +31,8 @@
     
     <script type="text/javascript">
 	console.log("page load");
+	
+	//vars for column graph//
 	var DailyCigarette = [];
 	var Year2 = [];
 	var Age1 = [];
@@ -35,11 +40,20 @@
 	var Age3 = [];
 	var Age4 = [];
 	var Age5 = [];
-        
+			//vars for line graph//
                         var Year = [];
                         var SmokingPercent = [];
                         var CigaretteConsumption = [];
                         var buildHTML;
+			
+	//vars for map chart and table//
+	var global = [];
+	var Country = [];
+	var Country_id = [];
+	var Consumption = [];
+	var IncomeGroup = [];
+	var PricePerPack = [];
+	var ExciseTax = [];
         
         $(document).ready(function(){
             console.log("doc ready");
@@ -95,11 +109,56 @@
                                     });//end dailycigarette
                                     
                                     
-                                    writeChart();
+                                    parsexml3();
                                     
                                 }//success2
                                     
 		           });//close ajax
+			 
+			 function parsexml3(){
+			    console.log("parsexml3");
+                         $.ajax({
+				type: "GET",
+				url: "ByCountry.xml",
+				dataType: "xml",
+				success: function(xml) {
+                                    console.log("xml success 3");
+				    
+				    buildHTML += '<table class="table table-striped" id="tableA" width="100%"><thead><tr class="headWhite"><th>Country</th><td>Consumption</td><td>Income Level</td><td>Price Per Pack in U.S. Dollars</td><td>Excise Tax</td></tr></thead><tbody>';
+				    
+                                    
+                                    $(xml).find('global').each(function(){
+                                        console.log("found global");
+				    var $global = $(this);
+			       
+				    Country = $(this).find('Country').text();
+				    console.log(Country);
+				    Consumption = $(this).find('Consumption').text();
+				    IncomeGroup = $(this).find('IncomeGroup').text();
+				    PricePerPack = $(this).find('PricePerPack').text();
+				    ExciseTax = $(this).find('ExciseTax').text();
+				    
+				    
+				    console.log(Consumption);
+				    
+				    buildHTML += '<tr><td>' + Country + '</td><td>' + Consumption + '</td><td>' + IncomeGroup + '</td><td>' + PricePerPack + '</td><td>' + ExciseTax + '</td></tr>';
+				    
+				    
+				    });//end global
+				    
+				    buildHTML += '</tbody></table>';
+				    
+				    $(buildHTML).appendTo('.table');
+				    
+				    $('#tableA').dataTable();
+				    
+				    
+				    
+				    writeChart();
+				    
+				}//success function 3
+				
+			 });//close ajax
                          
 			};//closeparsexml
                                     
@@ -119,16 +178,17 @@ function writeChart () {
                 text: 'Cigarette Consumption in the U.S.A',
 		style: {
 		 color: '#908670',
-		 fontFamily: 'Interstate',
-		 fontWeight: 'bold'
+		 font: '20px InterstateRegularCompressed',
+		 fontWeight: 400
 		},
                 x: -20 //center
             },
+	    
             subtitle: {
                 text: 'Mouse over to see percent of adults smoking each year',
 		style: {
 		 color: '#908670',
-		 fontFamily: 'Interstate',
+		 font: '14px InterstateRegularCompressed'
 		},
                 x: -20
             },
@@ -138,12 +198,17 @@ function writeChart () {
                 categories: Year,
                 title: {
                     text: 'Year',
-		  style: {
+		    style: {
 		    color: '#908670',
-		    fontFamily: 'Interstate',
+		    fontFamily: 'InterstateRegularCompressed'
 		  },
-                }
-	       
+                },
+	    labels: {
+            style: {
+                color: '#908670',
+                font: '12px InterstateRegularCompressed'
+                 },
+	       }
             },
             yAxis: {
 		min: 0,
@@ -153,17 +218,30 @@ function writeChart () {
                     text: 'Percent of Adults',
 		    style: {
 		    color: '#908670',
-		    fontFamily: 'Interstate',
+		    fontFamily: 'InterstateRegularCompressed'
 		  },
+		}, 
+		  labels: {
+		style: {
+                color: '#908670',
+                font: '12px InterstateRegularCompressed'
+                 },
+	       }
                 },
                 plotLines: [{
                     value: 0,
                     width: 1,
                     color: '#808080'
-                }]
-            },
+                }],
+            
             tooltip: {
-                valueSuffix: '%'
+                valueSuffix: '%',
+		style: {
+			color: '#373',
+			fontSize: '20px',
+			padding: '8px',
+			fontFamily: 'InterstateRegularCompressed'
+		}
             },
             legend: {
 		itemHiddenStyle: {
@@ -196,11 +274,11 @@ function writeChart () {
             },
     
             title: {
-                text: 'Percent of Daily Smokers by Age',
+                text: 'Percent of people who smoke daily by age',
 		style: {
 		 color: '#908670',
-		 fontFamily: 'Interstate',
-		 fontWeight: 'bold'
+		 font: '20px InterstateRegularCompressed',
+		 fontWeight: 400
 		},
             },
     
@@ -212,18 +290,27 @@ function writeChart () {
 		    color: '#908670',
 		    fontFamily: 'Interstate',
 		  },
-                }
+                },
+		labels: {
+            style: {
+                color: '#908670',
+                font: '12px InterstateRegularCompressed'
+                 },
+	       }
+		
             },
     
             yAxis: {
                 allowDecimals: false,
                 min: 0,
-		max: 21, 
+		max: 21,
+		tickInterval: 2,
                 title: {
                     text: 'Percent who smoke daily',
 		    style: {
 		    color: '#908670',
 		    fontFamily: 'Interstate',
+		    fontWeight:500,
 		  },
                 }
             },
@@ -231,7 +318,7 @@ function writeChart () {
             tooltip: {
                 headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
                 pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
                 footerFormat: '</table>',
                 shared: true,
                 useHTML: true
@@ -266,273 +353,300 @@ function writeChart () {
 		color:'#D1D2D4'
             }]//ends series
         });//ends Chart2
+	
+	mapsfunction();
         
-}//ends writeChart
+};//ends writeChart
                                     
         //For My map
 	
-	var map;
+       
+      function mapsfunction (){
+       
+       var map;
 	
-	AmCharts.ready(function() {
+	//AmCharts.ready(function() {
 			    map = new AmCharts.AmMap();
 			    map.pathToImages = "../ammap/images/";
 			    //map.panEventsEnabled = true; // this line enables pinch-zooming and dragging on touch devices
 			    
-			    map.colorSteps = 4;
+			    map.colorSteps = 5;
 			    map.balloon.color = "#000000";
-			    var dataProvider = {
+		       
+			
+			 
+			   var dataProvider = {
 			        mapVar: AmCharts.maps.worldLow,
 			
 			        areas: [
 			            {
 			            id: "AF",
 				    title: 'Afghanistan <b> 61</b>',
-			            value: 4447100},
+			            value: 61},
 			        {
 			            id: "AL",
 				    title: 'Albania <b> 1116</b>',
-			            value: 626932},
+			            value: 1116},
 			        {
 			            id: "DZ",
 				    title: 'Algeria 775',
-			            value: 5130632},
+			            value: 775},
 			        {
 			            id: "AR",
 				    title: 'Argentina <b> 1042</b>',
-			            value: 2673400},
+			            value: 1042},
 			        {
 			            id: "AU",
 				    title: 'Australia <b> 1034</b>',
-			            value: 33871648},
+			            value: 1034},
 			        {
 			            id: "AZ",
 				    title: 'Azerbaijan <b>1877 </b>',
-			            value: 4301261},
+			            value: 1877},
 			        {
 			           id: "BY",
 				   title: 'Belarus <b>2266 </b>',
-			            value: 3405565},
+			            value: 2266},
 			        {
 			            id: "BE",
 				    title: 'Belgium <b>1455</b>',
-			            value: 783600},
+			            value: 1455},
 			        {
 			            id: "BO",
 				    title: 'Bolivia <b>179</b>',
-			            value: 15982378},
+			            value: 179},
 			        {
 			            id: "BR",
 				    title: 'Brazil <b>504</b>',
-			            value: 8186453},
+			            value: 504},
 			        {
 			            id: "BG",
 				    title: 'Bulgaria <b>2822</b>',
-				    value: 1211537},
+				    value: 2822},
 			        {
 			            id: "BW",
 				    title: 'Botswana <b>336</b>',
-			            value: 1293953},
+			            value: 336},
 			        {
 			            id: "CA",
 				    title: 'Canada <b>809</b>',
-			            value: 12419293},
+			            value: 809},
 			        {
 			            id: "CL",
 				    title: 'Chile <b>860</b>',
-			            value: 6080485},
+			            value: 860},
 			        {
 			            id: "CN",
 				    title: 'China <b>1711</b>',
-			            value: 2926324},
+			            value: 1711},
 			        {
 			            id: "CO",
 				    title: 'Colombia <b>412</b>',
-			            value: 2688418},
+			            value: 412},
 			        {
 			            id: "CU",
 				    title: 'Cuba <b>1261</b>',
-			            value: 4041769},
+			            value: 1261},
 			        {
 			            id: "CZ",
 				    title: 'Czech Republic <b>2125</b>',
-			            value: 4468976},
+			            value: 2125},
 			        {
 			            id: "DK",
 				    title: 'Denmark <b>1413</b>',
-			            value: 1274923},
+			            value: 1413},
 			        {
 			            id: "EG",
 				    title: 'Egypt <b>1104</b>',
-			            value: 5296486},
+			            value: 1104},
 			        {
 			            id: "EE",
 				    title: 'Estonia <b>1523</b>',
-			            value: 6349097},
+			            value: 1523},
 			        {
 			            id: "FR",
 				    title: 'France <b>854</b>',
-			            value: 9938444},
+			            value: 854},
 			        {
 			            id: "DE",
 				    title: 'Germany <b>1045</b>',
-			            value: 4919479},
+			            value: 1045},
 			        {
 			            id: "GR",
 				    title: 'Greece <b>2797</b>',
-			            value: 2844658},
+			            value: 2797},
 			        {
 			            id: "GT",
 				    title: 'Guatamala <b>235</b>',
-			            value: 5595211},
+			            value: 235},
 			        {
 			            id: "HT",
 				    title: 'Haiti <b>100</b>',
-			            value: 902195},
+			            value: 100},
 			        {
 			            id: "HU",
 				    title: 'Hungary <b>1518</b>',
-			            value: 1711263},
+			            value: 1518},
 			        {
 			            id: "IN",
 				    title: 'India <b>96</b>',
-			            value: 1998257},
+			            value: 96},
 			        {
 			            id: "IR",
 				    title: 'Iran <b>657</b>',
-			            value: 1235786},
+			            value: 657},
 			        {
 			            id: "IQ",
 				    title: 'Iraq <b>864</b>',
-			            value: 8414350},
+			            value: 864},
 			        {
 			            id: "IE",
 				    title: 'Ireland <b>1006</b>',
-			            value: 1819046},
+			            value: 1006},
 			        {
 			            id: "IT",
 				    title: 'Italy <b>1475</b>',
-			            value: 18976457},
+			            value: 1475},
 			        {
 			            id: "JP",
 				    title: 'Japan <b>1841</b>',
-			            value: 8049313},
+			            value: 1841},
 				{
 			            id: "KZ",
 				    title: 'Kazakhstan <b>1934</b>',
-			            value: 8049313},
+			            value: 1934},
 				    
 			        {
 			            id: "LB",
 				    title: 'Lebanon <b>2138</b>',
-			            value: 642200},
+			            value: 2138},
 			        {
 			            id: "LY",
 				    title: 'Libya <b>818</b>',
-			            value: 11353140},
+			            value: 818},
 			        {
 			            id: "MX",
 				    title: 'Mexico <b>317</b>',
-			            value: 3450654},
+			            value: 317},
 				{
 			            id: "MN",
 				    title: 'Mongolia <b>555</b>',
-			            value: 3450654},
+			            value: 555},
 				    
 			        {
 			            id: "MA",
 				    title: 'Morocco <b>500</b>',
-			            value: 3421399},
+			            value: 500},
 			        {
 			            id: "NO",
 				    title: 'Norway <b>534</b>',
-			            value: 12281054},
+			            value: 534},
 			        {
 			            id: "PK",
 				    title: 'Pakistan <b>468</b>',
-			            value: 1048319},
+			            value: 468},
 			        {
 			            id: "PE",
 				    title: 'Peru <b>137</b>',
-			            value: 4012012},
+			            value: 137},
 			        {
 			            id: "PL",
 				    title: 'Poland <b>1586</b>',
-			            value: 754844},
+			            value: 1586},
 			        {
 			            id: "RU",
 				    title: 'Russia Federation <b>2786</b>',
-			            value: 5689283},
+			            value: 2786},
 			        {
 			            id: "SA",
 				     title: 'Saudi Arabia <b>809</b>',
-			            value: 20851820},
+			            value: 809},
 			        {
 			            id: "RS",
 				    title: 'Serbia <b>2861</b>',
-			            value: 2233169},
+			            value: 2861},
 			        {
 			            id: "SI",
 				    title: 'Slovenia <b>2369</b>',
-			            value: 608827},
+			            value: 2369},
 			        {
 			            id: "ZA",
 				    title: 'South Africa <b>459</b>',
-			            value: 7078515},
+			            value: 459},
 			        {
 			            id: "ES",
 				    title: 'Spain <b>1751</b>',
-			            value: 5894121},
+			            value: 1751},
 			        {
 			            id: "SE",
 				    title: 'Sweden <b>715</b>',
-			            value: 1808344},
+			            value: 715},
 			        {
 			            id: "CH",
 				    title: 'Switzerland <b>1722</b>',
-			            value: 5363675},
+			            value: 1722},
 			        {
 			            id: "TN",
 				    title: 'Tunisia <b>1628</b>',
-			            value: 493782},
+			            value: 1628},
 				{
 			            id: "TR",
 				    title: 'Turkey <b>1399</b>',
-			            value: 493782},
+			            value: 1399},
 				{
 			            id: "UA",
 				    title: 'Ukraine <b>2401</b>',
-			            value: 493782},
+			            value: 2401},
 				    
 				{
 			            id: "GB",
 				    title: 'United Kingdom <b>750</b>',
-			            value: 493782},
+			            value: 750},
 				{
 			            id: "US",
 				    title: 'United States of America <b>1028</b>',
-			            value: 493782},
+			            value: 1028},
 				{
 			            id: "VE",
 				    title: 'Venezuela <b>496</b>',
-			            value: 493782}]
+			            value: 496}]
 			    };
+			    
+			    map.zoomControl.buttonRollOverColor = "#8B4D25";
+			    map.zoomControl.buttonBorderColor = "#939597";
+			    map.zoomControl.homeIconColor = "#C5DAE6";
+			    map.zoomControl.buttonFillColor = "#C6C8CA";
+			  
 			
-			    map.areasSettings = {
-			        autoZoom: true
-			    };
+			 
+			 
+			  map.areasSettings = {
+			        autoZoom: true,
+				colorSolid:"#8B4D25",
+				color: "#F1CD96",
+				rollOverColor: "#D1B288",
+				rollOverOutlineColor: "#8B4D25",
+				unlistedAreasColor: "#C6C8CA",
+			   };
+			 
+				  
 			    map.dataProvider = dataProvider;
 			
 			    var valueLegend = new AmCharts.ValueLegend();
 			    valueLegend.right = 10;
-			    valueLegend.minValue = "1-499";
-			    valueLegend.maxValue = "2,500+";
+			    valueLegend.minValue = "1-715";
+			    valueLegend.maxValue = "2,266+";
+			    valueLegend.borderColor= "#C5DAE6";
 			    map.valueLegend = valueLegend;
 			
 			    map.write("mapdiv");
-			});
-    
-                                    
-                                    
+			    
+			    
+			//});
+			}
+			
+		     }
+                                
     </script> 
     
     
@@ -541,10 +655,10 @@ function writeChart () {
 <body>
     <div class="container">
     <div class="row">
-     <div class="col-md-12"><h2>Cigarette Consumption Information &nbsp;<img class="cigarette" src="images/cigarette.png" width="100" height="50"></h2></div>
+     <div class="col-md-12"><h2>Is Cigarette Consumption Decreasing? &nbsp;<img class="cigarette" src="images/cigarette.png" width="100" height="50"></img></h2></div>
     </div>
     <div class="row">
-     <div class="col-md-12 deck"><p>How has cigarette consumption changed over time by age and location? </p></div>
+     <div class="col-md-12 deck">Cigarette consumption's change over time by age and location</div>
     </div>
     
     <!--Line divider-->
@@ -566,10 +680,10 @@ function writeChart () {
     </div>
     <div id="collapseOne" class="panel-collapse collapse in">
       <div class="panel-body">
-        The trend in cigarette smoking amoung adults was collected by the Centers for Disease Control and Prevention from 1965 to 2011.
-	The most recent <a href="http://www.cdc.gov/tobacco/data_statistics/tables/trends/cig_smoking/index.htm">data</a> is from 2011. Differences amoung age groups from 2004 to 2011 comes from the
+        <p>The trend in cigarette smoking among adults was collected by the Centers for Disease Control and Prevention from 1965 to 2011.
+	The most recent <a href="http://www.cdc.gov/tobacco/data_statistics/tables/trends/cig_smoking/index.htm">data</a> is from 2011. Differences among age groups from 2004 to 2011 come from the
 	Substance Abuse and Mental Health Data Archive, which holds a <a href="http://www.icpsr.umich.edu/icpsrweb/SAMHDA/browse">list</a> of the National Surveys on Drug Use and Health. Although the most recent data shows a decline in cigarette consumption,
-	deaths from smoking and health risks have stayed the same. 
+	deaths from smoking and health risks associated with smoking have stayed the same.</p>
       </div>
     </div>
   </div>
@@ -583,9 +697,9 @@ function writeChart () {
     </div>
     <div id="collapseTwo" class="panel-collapse collapse">
       <div class="panel-body">
-        The leading cause of cancer related deaths amoung both men and females is lung cancer, but it is also the most preventable form of cancer in the United States. Tabacco in cigarettes
+        <p>The leading cause of cancer related deaths among both men and women is lung cancer, but it is also the most preventable form of cancer in the United States. Tobacco in cigarettes
 	accounts for 87 percent of lung cancer deaths. Smoking also increases the risk of cancers of the mouth, lips, nose, larynx, esophagus, stomach, and more. After the first US Surgeon General's Report on Smoking and Health in 1964,
-	cigarette consumption has declined but 44 million American adults still smoke since 2011 data. 
+	cigarette consumption has declined but 44 million American adults still smoke according to 2011 data.</p>
       </div>
     </div>
   </div>
@@ -603,11 +717,14 @@ function writeChart () {
     
     <div class="row">
      <div class="col-md-8"><h3>Cigarette Consumption Trends</h3><div id="chart1" style="width: 100%; height: 400px; margin: 0 auto"></div></div>
-     <div class="col-md-4"><h3>Deaths</h3><div class="box"><div class="numbers">1 <span class="between">of every</span> 5</div><div class="deaths">Deaths</div>
-      <div class= "smalltext">Caused by the harmful effects of cigarette smoking each year in the United States. One in every three cancer dealths would not
-      occur if nobody smoked.</div></div>
+     <div class="col-md-4"><h3>Deaths</h3><div class="box"><div class="numbers"><img class="bluearrow" src="images/uparrow.png" width="47.8" height="36.5"></img>&nbsp;1 <span class="between">of every</span> 5</div><!--<div class="deaths">Deaths</div>-->
+      <div class= "smalltext">Deaths are caused by the harmful effects of cigarette smoking each year in the United States </div></div>
       &nbsp;
-      <div class="box"><div class="numbers">+440,000</div><div class= "smalltext">Each year in the United States</div>
+      
+     <div class="box"><div class="numbers"><img class="bluearrow" src="images/downarrow.png" width="47.8" height="36.5"></img>&nbsp;1 <span class="between">of every</span> 3</div><!--<div class="deaths">Deaths</div>-->
+     <div class= "smalltext">Cancer deaths would not occur if nobody smoked </div></div>
+      &nbsp;
+      <div class="box"><div class="numbers">+ &nbsp;440,000</div><div class= "smalltext">Deaths caused by cigarette smoking each year in the United States including dealths from secondhand smoke</div>
       </div>
     </div>
     </div>
@@ -639,8 +756,8 @@ function writeChart () {
 	     </div>
 	 <div id="collapseThree" class="panel-collapse collapse in">
 	   <div class="panel-body">
-	     The Tabacco Atlas has recorded cigarette consumption per capita on its <a href="http://www.tobaccoatlas.org/uploads/Images/PDFs/TA4_pdf_world_tables.pdf">world tables</a>.
-	     The most recent annual cigarette consumption comes from 2009. In the chart below, search by country to see the price of a pack of cigarettes in U.S. dollars from 2010. 
+	     <p>The Tabacco Atlas has recorded cigarette consumption per capita on its <a href="http://www.tobaccoatlas.org/uploads/Images/PDFs/TA4_pdf_world_tables.pdf">world tables</a>.
+	     The most recent annual cigarette consumption comes from 2009. In the chart below, search by country to see the price of a pack of cigarettes in U.S. dollars from 2010.</p>
 	  </div>
 	</div>
       </div>
@@ -654,7 +771,7 @@ function writeChart () {
 	     </div>
 	       <div id="collapseFour" class="panel-collapse collapse">
 	        <div class="panel-body">
-		  Nearly 20% of the world's population smokes cigarettes. The Tabacco Atlas found that while high-income countries consumption has been decreasing,
+		 <p> Nearly 20% of the world's population smokes cigarettes. The Tabacco Atlas found that while high-income countries consumption has been decreasing,
 		  low-and-middle-income countries consumption has been increasing. This increase offsets the decrease from the high-income countries. 
 	     </div>
 	     </div>
@@ -664,9 +781,23 @@ function writeChart () {
 	
      
      <div class="col-md-9">
-    <div id="mapdiv" style="width: 100%; background-color:#CEE6F2; height: 500px;"></div></div>
+      <div class="maptitle">Annual Cigarette Consumption Per Capita</div>
+    <div id="mapdiv" style="width: 100%; background-color:#C5DAE6; height: 500px;"></div></div>
      </div><!--ends row-->
+     
+    <!--Line divider-->
+   
+    <div class="row">
+     <div class="col-md-12"><hr></div>
+    </div><!--done with line divider-->
     
+    <!--Chart-->
+    
+    <div class="row">
+    <div class="col-md-12">
+     <div class="table"></div><!--table-->
+      </div><!--col-->
+     </div><!--row-->
 
 
 
